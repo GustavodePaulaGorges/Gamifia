@@ -4,14 +4,14 @@ import GameApi from "@/api/games";
 const gameApi = new GameApi();
 
 export const UseGameInfo = defineStore("getgame", () => {
-  const game = ref([]);
-  async function getGame() {
+  const games = ref([]);
+  async function getGames() {
     try {
-      game.value = await gameApi.getGame();
+      games.value = await gameApi.getGames();
     } catch {
-      game.value = "wrong";
+      games.value = "wrong";
     }
   }
 
-  return { game, getGame };
+  return { games, getGames };
 });

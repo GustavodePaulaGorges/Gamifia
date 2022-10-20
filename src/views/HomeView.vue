@@ -7,20 +7,20 @@ export default {
   components: { GameCard },
   computed: {
     ...mapStores(UseGameInfo),
-    ...mapState(UseGameInfo, ['game'])
+    ...mapState(UseGameInfo, ['games'])
   },
   methods: {
-    ...mapActions(UseGameInfo, ['getGame'])
+    ...mapActions(UseGameInfo, ['getGames'])
   },
   async created() {
-    await this.getGame()
+    await this.getGames()
   }
 }
 </script>
   
 <template>
   <main>
-    game - {{ game }}
+    game - {{ games }}
     <div>
       <div class="row alt">
         <div class="col">
